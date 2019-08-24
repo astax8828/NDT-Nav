@@ -1,0 +1,24 @@
+doctype html
+html
+
+  head
+    = render 'layouts/head'
+
+  body
+    .root.grid.grid-a-flow-col-lg
+      .sidebar
+        = render 'layouts/admin_panel/sidebar'
+      .main_panel
+        nav.main_panel-navbar.grid.grid-a-flow-col-lg
+          button.btn.justify-start-self
+            = fa_icon('ellipsis-v')
+          .log_out.justify-end-self
+            = link_to fa_icon('times-circle', type: :regular),
+                    destroy_admin_session_path,
+                    :method => :delete
+        .main_content
+          = yield
+          / - if controller_name == 'admin_panel'
+          /   = render 'layouts/admin_panel_templates/mean_page'
+          / - elsif controller_name == 'admin_users'
+          /   = render 'layouts/admin_panel_templates/admin_users_page'

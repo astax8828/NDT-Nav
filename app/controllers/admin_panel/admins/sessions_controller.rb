@@ -2,7 +2,7 @@
 
 class AdminPanel::Admins::SessionsController < Devise::SessionsController
   # before_action :configure_sign_in_params, only: [:create]
-  layout 'admin_panel/login/admin_users_login'
+  layout 'admin_panel/admins_login'
   # GET /resource/sign_in
   def new
     super
