@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  namespace :admin_panel do
+    get 'admin_panel/index'
+  end
   # devise_for :admins, class_name: "AdminPanel::Admin"
   devise_for :admins, class_name: "AdminPanel::Admin", controllers: {
       :sessions => "admin_panel/admins/sessions",

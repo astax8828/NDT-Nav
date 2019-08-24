@@ -1,0 +1,91 @@
+.logo > a, .user > span, .nav > li > a {
+  color: rgb(255, 255, 255);
+}
+
+
+//=============================================================================
+.sidebar {
+  position: relative;
+  background-repeat: no-repeat;
+  background-position: left;
+  background-size: cover;
+  background-image: image-url("background_sidebar_admin_panel2.jpg");
+  //background-color: rgb(76, 112, 148);
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgb(0, 0, 0);
+    opacity: 0.7;
+    z-index: 1;
+  }
+
+  .logo {
+    padding: 12px;
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    &:before {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      right: 15px;
+      width: calc(100% - 30px);
+      height: 1px;
+      background-color: rgba(255, 255, 255, 0.3);
+    }
+    & > a {
+      //text-transform: uppercase;
+
+      padding: 5px 0;
+      display: inline-block;
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 30px;
+      white-space: nowrap;
+    }
+  }
+
+  .user {
+
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding-bottom: 20px;
+    margin-top: 20px;
+    &:before {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      right: 15px;
+      width: calc(100% - 30px);
+      height: 1px;
+      background-color: rgba(255, 255, 255, 0.3);
+    }
+    & > span {
+
+    }
+  }
+
+  .nav {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding-bottom: 20px;
+    margin-top: 20px;
+
+    &:before {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      right: 15px;
+      width: calc(100% - 30px);
+      height: 1px;
+      background-color: rgba(255, 255, 255, 0.3);
+    }
+  }
+}
+
