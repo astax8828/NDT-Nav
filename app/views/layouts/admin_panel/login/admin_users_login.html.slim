@@ -1,0 +1,14 @@
+doctype html
+html
+  head
+    = render 'layouts/head'
+  body
+    .backg_lap
+      .container.grid.align-content-center
+        .alert_lap.justify-center-self
+          p.notice
+            = notice
+          p.alert
+            = alert
+        .content.form_group.justify-center-self
+          = yield

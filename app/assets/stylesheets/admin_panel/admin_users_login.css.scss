@@ -1,0 +1,55 @@
+
+.backg_lap {
+  position: fixed;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-image: image-url("background_admin_panel_login.jpg");
+  //background-color: rgb(76, 112, 148);
+  min-width: 100vw;
+  min-height: 100vh;
+
+
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: black;
+    opacity: 0.7;
+    z-index: 1;
+  }
+
+  & > .container {
+    position: relative;
+    z-index: 2;
+    min-height: 100vh;
+    grid-row-gap: 25px;
+
+    .alert_lap {
+
+    }
+
+    .content {
+      min-width: 35%;
+
+      //.log_out {
+      //  margin-top: 15px;
+      //}
+
+      & > form {
+        //margin: 20px;
+        & > .field > .form_input {
+          width: 90%;
+        }
+
+        .actions {
+          text-align: center;
+        }
+      }
+
+    }
+  }
+}
