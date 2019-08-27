@@ -1,0 +1,12 @@
+p#notice = notice
+
+p
+  strong Name:
+  = @admin_panel_category.name
+p
+  strong Description:
+  = @admin_panel_category.description
+
+=> link_to 'Edit', edit_admin_panel_category_path(@admin_panel_category)
+'|
+=< link_to 'Back', admin_panel_categories_path

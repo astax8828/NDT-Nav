@@ -1,0 +1,23 @@
+h1 Listing admin_panel_categories
+
+table
+  thead
+    tr
+      th Name
+      th Description
+      th
+      th
+      th
+
+  tbody
+    - @admin_panel_categories.each do |admin_panel_category|
+      tr
+        td = admin_panel_category.name
+        td = admin_panel_category.description
+        td = link_to 'Show', admin_panel_category
+        td = link_to 'Edit', edit_admin_panel_category_path(admin_panel_category)
+        td = link_to 'Destroy', admin_panel_category, data: { confirm: 'Are you sure?' }, method: :delete
+
+br
+
+= link_to 'New Category', new_admin_panel_category_path

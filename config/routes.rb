@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
   namespace :admin_panel do
+    resources :categories
+  end
+  namespace :admin_panel do
     get '/', to: 'admin_panel#index'
   end
 

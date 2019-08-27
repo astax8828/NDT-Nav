@@ -1,12 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="NDT_Nav_development@localhost" uuid="038735bc-6db7-478a-97f2-2173e249ba15">
+    <data-source source="LOCAL" name="Rails NDT-Nav: development" uuid="f7681092-ee7d-4538-9aab-9de919b3fd56">
       <driver-ref>postgresql</driver-ref>
       <synchronize>true</synchronize>
-      <configured-by-url>true</configured-by-url>
+      <imported>true</imported>
+      <remarks>$PROJECT_DIR$/config/database.yml</remarks>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
-      <jdbc-url>jdbc:postgresql://localhost:5432/NDT_Nav_development</jdbc-url>
+      <jdbc-url>jdbc:postgresql://127.0.0.1:5432/NDT_Nav_development</jdbc-url>
+    </data-source>
+    <data-source source="LOCAL" name="Rails NDT-Nav: production" uuid="aea6af9a-4ead-43a5-b4e2-729b2a4d4e35">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <imported>true</imported>
+      <remarks>$PROJECT_DIR$/config/database.yml</remarks>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://127.0.0.1:5432/NDT_Nav_production</jdbc-url>
+    </data-source>
+    <data-source source="LOCAL" name="Rails NDT-Nav: test" uuid="ecdd1dd4-4e35-41e8-9579-ff2e354afbd8">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <imported>true</imported>
+      <remarks>$PROJECT_DIR$/config/database.yml</remarks>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://127.0.0.1:5432/NDT_Nav_test</jdbc-url>
     </data-source>
   </component>
 </project>
