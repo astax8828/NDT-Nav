@@ -1,0 +1,27 @@
+p#notice = notice
+
+p
+  strong Title:
+  = @admin_panel_article.title
+p
+  strong Content:
+  = @admin_panel_article.content
+p
+  strong Description:
+  = @admin_panel_article.description
+p
+  strong Category:
+  = @admin_panel_article.category
+p
+  strong Type article:
+  = @admin_panel_article.type_article
+p
+  strong Allow comments:
+  = @admin_panel_article.allow_comments
+p
+  strong Status article:
+  = @admin_panel_article.status_article
+
+=> link_to 'Edit', edit_admin_panel_article_path(@admin_panel_article)
+'|
+=< link_to 'Back', admin_panel_articles_path

@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
   namespace :admin_panel do
+    resources :articles
+  end
+  namespace :admin_panel do
     resources :categories
   end
   namespace :admin_panel do

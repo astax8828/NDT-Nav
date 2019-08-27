@@ -1,0 +1,2 @@
+module AdminPanel::ArticlesHelper
+end

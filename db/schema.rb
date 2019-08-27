@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_27_120232) do
+ActiveRecord::Schema.define(version: 2019_08_27_123124) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,7 +34,22 @@ ActiveRecord::Schema.define(version: 2019_08_27_120232) do
     t.index ["reset_password_token"], name: "index_admin_panel_admins_on_reset_password_token", unique: true
   end
 
-  create_table "admin_panel_categories", force: :cascade do |t|
+  create_table "articles", force: :cascade do |t|
+    t.bigint "admin_account_id", null: false
+    t.text "title"
+    t.text "content"
+    t.text "description"
+    t.bigint "category_id", null: false
+    t.string "type_article"
+    t.boolean "allow_comments"
+    t.string "status_article"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["admin_account_id"], name: "index_articles_on_admin_account_id"
+    t.index ["category_id"], name: "index_articles_on_category_id"
+  end
+
+  create_table "categories", id: :bigint, default: -> { "nextval('admin_panel_categories_id_seq'::regclass)" }, force: :cascade do |t|
     t.string "name"
     t.text "description"
     t.datetime "created_at", precision: 6, null: false
@@ -42,4 +57,6 @@ ActiveRecord::Schema.define(version: 2019_08_27_120232) do
   end
 
   add_foreign_key "admin_accounts", "admin_panel_admins"
+  add_foreign_key "articles", "admin_accounts"
+  add_foreign_key "articles", "categories"
 end

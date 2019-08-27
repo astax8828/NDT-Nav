@@ -1,0 +1,33 @@
+h1 Listing admin_panel_articles
+
+table
+  thead
+    tr
+      th Title
+      th Content
+      th Description
+      th Category
+      th Type article
+      th Allow comments
+      th Status article
+      th
+      th
+      th
+
+  tbody
+    - @admin_panel_articles.each do |admin_panel_article|
+      tr
+        td = admin_panel_article.title
+        td = admin_panel_article.content
+        td = admin_panel_article.description
+        td = admin_panel_article.category
+        td = admin_panel_article.type_article
+        td = admin_panel_article.allow_comments
+        td = admin_panel_article.status_article
+        td = link_to 'Show', admin_panel_article
+        td = link_to 'Edit', edit_admin_panel_article_path(admin_panel_article)
+        td = link_to 'Destroy', admin_panel_article, data: { confirm: 'Are you sure?' }, method: :delete
+
+br
+
+= link_to 'New Article', new_admin_panel_article_path
