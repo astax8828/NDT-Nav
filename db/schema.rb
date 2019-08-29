@@ -49,14 +49,13 @@ ActiveRecord::Schema.define(version: 2019_08_27_123124) do
     t.index ["category_id"], name: "index_articles_on_category_id"
   end
 
-  create_table "categories", id: :bigint, default: -> { "nextval('admin_panel_categories_id_seq'::regclass)" }, force: :cascade do |t|
+  create_table "categories", force: :cascade do |t|
     t.string "name"
     t.text "description"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  add_foreign_key "admin_accounts", "admin_panel_admins"
   add_foreign_key "articles", "admin_accounts"
   add_foreign_key "articles", "categories"
 end
