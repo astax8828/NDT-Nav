@@ -15,7 +15,8 @@
 
     /Content of article
     = f.label :content.capitalize
-    = f.input_field :content
+    = f.input_field :content, class: 'tinymce', rows: '25'
+    = tinymce
 
     /Description of article
     = f.label :description.capitalize
