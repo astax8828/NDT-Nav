@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
-class AdminPanel::Admins::SessionsController < Devise::SessionsController
+class AdminPanel::Admin::SessionsController < Devise::SessionsController
   # before_action :configure_sign_in_params, only: [:create]
-  layout 'admin_panel/admins_login'
+  layout 'admin_panel/login/admin_users_login'
   # GET /resource/sign_in
   def new
     super

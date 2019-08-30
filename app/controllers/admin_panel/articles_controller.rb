@@ -14,6 +14,8 @@ class AdminPanel::ArticlesController < ApplicationController
   # GET /admin_panel/articles/new
   def new
     @admin_panel_article = AdminPanel::Article.new
+    @categories = AdminPanel::Category.all
+
   end
 
   # GET /admin_panel/articles/1/edit
@@ -22,7 +24,7 @@ class AdminPanel::ArticlesController < ApplicationController
 
   # POST /admin_panel/articles
   def create
-    @admin_panel_article = AdminPanel::Article.new(admin_panel_article_params)
+    @admin_panel_article = AdminPanel::Article.new(admin_panel_article_params.merge(admin_account_id: current_admin.id))
 
     if @admin_panel_article.save
       redirect_to @admin_panel_article, notice: 'Article was successfully created.'
@@ -47,13 +49,15 @@ class AdminPanel::ArticlesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_admin_panel_article
-      @admin_panel_article = AdminPanel::Article.find(params[:id])
-    end
 
-    # Only allow a trusted parameter "white list" through.
-    def admin_panel_article_params
-      params.require(:admin_panel_article).permit(:title, :content, :description, :category_id, :type_article, :allow_comments, :status_article)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_admin_panel_article
+    @admin_panel_article = AdminPanel::Article.find(params[:id])
+  end
+
+  # Only allow a trusted parameter "white list" through.
+  def admin_panel_article_params
+    params.require(:admin_panel_article).permit(:title, :content, :description, :category_id,
+                                                :type_article, :allow_comments, :status_article)
+  end
 end

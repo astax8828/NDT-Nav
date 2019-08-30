@@ -1,0 +1,17 @@
+// Place all the styles related to the admin_panel/Articles controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+
+
+//The Page of a New Article
+.article_form{
+  grid-template-columns: 9fr 1fr;
+  &-visual_editor{
+
+    //input title
+    > input:nth-child(1){
+    }
+  }
+}

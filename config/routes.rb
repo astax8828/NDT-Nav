@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   end
 
   # devise_for :admins, class_name: "AdminPanel::Admin"
-  devise_for :admins, class_name: "AdminPanel::Admin", controllers: {
+  devise_for :admins, class_name: 'AdminPanel::Admin', controllers: {
       :sessions => "admin_panel/admins/sessions",
       :passwords => "admin_panel/admins/passwords",
       :registrations => "admin_panel/admins/registrations"

@@ -57,7 +57,7 @@ gem 'devise', '~> 4.6', '>= 4.6.2'
 gem 'font_awesome5_rails'
 # Html editor tinymce
 gem 'tinymce-rails'
-
+gem 'simple_form'
 gem 'listen'
 gem 'ruby-debug-ide', '~> 0.7.0'
 gem 'debase', '~> 0.2.4'

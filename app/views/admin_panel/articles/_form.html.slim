@@ -1,4 +1,5 @@
-= form_for @admin_panel_article do |f|
+= simple_form_for @admin_panel_article,
+        :html => {:class => "article_form grid form_group"} do |f|
   - if @admin_panel_article.errors.any?
     #error_explanation
       h2 = "#{pluralize(@admin_panel_article.errors.count, "error")} prohibited this admin_panel_article from being saved:"
@@ -6,25 +7,36 @@
         - @admin_panel_article.errors.full_messages.each do |message|
           li = message
 
-  .field
-    = f.label :title
-    = f.text_area :title
-  .field
-    = f.label :content
-    = f.text_area :content
-  .field
-    = f.label :description
-    = f.text_area :description
-  .field
-    = f.label :category
-    = f.text_field :category
-  .field
-    = f.label :type_article
-    = f.text_field :type_article
-  .field
-    = f.label :allow_comments
-    = f.check_box :allow_comments
-  .field
-    = f.label :status_article
-    = f.text_field :status_article
-  .actions = f.submit
+  .article_form-visual_editor.grid
+
+    /Title of article
+    = f.label :title.capitalize
+    = f.input_field :title, as: :string
+
+    /Content of article
+    = f.label :content.capitalize
+    = f.input_field :content
+
+    /Description of article
+    = f.label :description.capitalize
+    = f.input_field :description, as: :string
+
+  .article_form-sidebar
+
+    /Article type
+    = f.label :type_article.capitalize
+    = f.input_field :type_article, collection: ["Новости", "Статьи"],
+            prompt: "Select type"
+
+    /Status of article
+    = f.label :status_article.capitalize
+    = f.input_field :status_article,
+            collection: ["Опубликована", "Черновик", "Архив"],
+            prompt: "Select status"
+
+    /Category of article
+    = f.label :category_id.capitalize
+    = f.input_field :category_id, collection: AdminPanel::Category.all,
+            prompt: "Select category"
+
+    = f.button :submit
