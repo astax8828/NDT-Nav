@@ -20,24 +20,23 @@
 
     /Description of article
     = f.label :description.capitalize
-    = f.input_field :description, autocomplete: "off"
+    = f.input_field :description, autocomplete: "off", rows: '10'
 
   .article_form-sidebar.grid
-
     /Article type
     = f.label :type_article.capitalize
     = f.input_field :type_article, collection: ["Новости", "Статьи"],
-            prompt: "Select type"
+            prompt: "Select type", class: 'select_ap'
 
     /Status of article
     = f.label :status_article.capitalize
     = f.input_field :status_article,
             collection: ["Опубликована", "Черновик", "Архив"],
-            prompt: "Select status"
+            prompt: "Select status", class: 'select_ap'
 
     /Category of article
     = f.label :category_id.capitalize
     = f.input_field :category_id, collection: AdminPanel::Category.all,
-            prompt: "Select category"
+            prompt: "Select category", class: 'select_ap'
 
-    = f.button :submit
+    = f.button :submit, class: 'button_ap'

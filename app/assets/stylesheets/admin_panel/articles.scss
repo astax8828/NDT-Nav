@@ -2,6 +2,12 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+//The Index page
+.index {
+  background: white;
+  width: 100%;
+  height: 100%;
+}
 
 //The Page of a New Article
 .article_form {
@@ -36,6 +42,10 @@
 
   &-sidebar {
     grid-auto-rows: minmax(min-content, max-content);
+    padding-top: 15px;
 
+    & > :nth-child(even) {
+      margin-bottom: 25px;
+    }
   }
 }

@@ -110,6 +110,10 @@ li, ol {
   align-self: center;
 }
 
+.align-end-self {
+  align-self: end;
+}
+
 
 //justify
 //  выравнивание start
@@ -153,35 +157,6 @@ li, ol {
 
 //=============================================================================
 //Elements
-//Forms
-.form_group {
-  label {
-    font-size: 16px;
-    margin-bottom: 5px;
-    text-transform: uppercase;
-    font-family: Roboto, Sans-Serif;
-    line-height: 1.42857143;
-  }
-
-  //input title
-  input {
-    background-color: #fff;
-    box-shadow: none;
-    border: 1px solid #e3e3e3;
-    border-radius: 4px;
-    color: #565656;
-    padding: 8px 12px;
-    transition: all .3s linear;
-    font-size: 20px;
-    font-family: Roboto, Sans-Serif;
-
-    &:focus {
-      border: 1px solid #aaa;
-      outline: 0 !important;
-      color: #333;
-    }
-  }
-}
 
 
 
@@ -211,19 +186,52 @@ li, ol {
   }
 }
 
-//Button for the admin panel
-.button_ad_pan {
 
-  color: rgb(255, 255, 255);
-  background-color: rgb(68, 68, 68);
+
+//=============================Components of the admin panel=====================================
+//Forms of the admin panel
+.form_group {
+  label {
+    font-size: 16px;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    font-family: Roboto, Sans-Serif;
+    line-height: 1.42857143;
+  }
+
+  //input title
+  input {
+    //background-color: #fff;
+    box-shadow: none;
+    border: 1px solid #e3e3e3;
+    border-radius: 4px;
+    color: #565656;
+    padding: 8px 12px;
+    transition: all .3s linear;
+    font-size: 20px;
+    font-family: Roboto, Sans-Serif;
+
+    &:focus {
+      border: 1px solid #aaa;
+      outline: 0 !important;
+      color: #333;
+    }
+  }
+}
+
+//Button for the admin panel
+.button_ap {
+
+  color: rgb(255, 255, 255) !important;
+  background-color: rgb(68, 68, 68) !important;
   opacity: 1;
   min-width: 140px;
   transition: all 60ms ease-in;
   border-width: 1px;
   font-weight: 400;
-  padding: 8px 16px;
+  padding: 2px 16px !important;
   display: inline-block;
-  font-size: 14px;
+  font-size: 12px;
   line-height: 1.42857143;
   text-align: center;
   white-space: nowrap;
@@ -236,10 +244,52 @@ li, ol {
   border-radius: 4px;
 
   &:hover {
-    background-color: rgb(53, 53, 53);
+    background-color: rgb(53, 53, 53) !important;
     color: rgb(255, 255, 255);
   }
 }
+
+.select_ap {
+  background-color: #fff;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  min-height: 25px;
+  height: 25px;
+  box-sizing: border-box;
+  border-collapse: initial;
+  width: 100%;
+  font-family: Roboto
+}
+
+.table_admin_panel {
+  border-spacing: 0;
+  margin: 15px;
+  //width: 98%;
+
+  thead > tr > th {
+    padding-left: 8px;
+  }
+
+  & > tbody {
+
+    & > tr {
+      position: relative;
+
+
+      & > td {
+        padding: 12px 8px;
+        border-top: 1px solid rgb(221, 221, 221);
+      }
+
+      &:nth-of-type(odd) {
+        background-color: rgb(249, 249, 249);
+
+      }
+    }
+  }
+}
+
+
 
 //=============================================================================
 @media (min-width: 576px) {
@@ -259,6 +309,8 @@ li, ol {
   // Выравнивание колонок сетки
 
 }
+
+
 
 @media (min-width: 768px) {
 
@@ -305,32 +357,3 @@ li, ol {
 
 }
 
-//Components
-
-.table {
-  border-spacing: 0;
-  margin: 15px;
-  //width: 98%;
-
-  thead > tr > th {
-    padding-left: 8px;
-  }
-
-  & > tbody {
-
-    & > tr {
-      position: relative;
-
-
-      & > td {
-        padding: 12px 8px;
-        border-top: 1px solid rgb(221, 221, 221);
-      }
-
-      &:nth-of-type(odd) {
-        background-color: rgb(249, 249, 249);
-
-      }
-    }
-  }
-}
