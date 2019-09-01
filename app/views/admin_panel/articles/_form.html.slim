@@ -11,18 +11,18 @@
 
     /Title of article
     = f.label :title.capitalize
-    = f.input_field :title, as: :string
+    = f.input_field :title, autocomplete: "off", as: :string
 
     /Content of article
     = f.label :content.capitalize
-    = f.input_field :content, class: 'tinymce', rows: '25'
+    = f.input_field :content, class: 'tinymce', rows: '40'
     = tinymce
 
     /Description of article
     = f.label :description.capitalize
-    = f.input_field :description, as: :string
+    = f.input_field :description, autocomplete: "off"
 
-  .article_form-sidebar
+  .article_form-sidebar.grid
 
     /Article type
     = f.label :type_article.capitalize

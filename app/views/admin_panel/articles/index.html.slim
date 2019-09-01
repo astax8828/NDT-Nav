@@ -18,7 +18,7 @@ table
     - @admin_panel_articles.each do |admin_panel_article|
       tr
         td = admin_panel_article.title
-        td = admin_panel_article.content
+        td = raw admin_panel_article.content
         td = admin_panel_article.description
         td = admin_panel_article.category.name
         td = admin_panel_article.type_article

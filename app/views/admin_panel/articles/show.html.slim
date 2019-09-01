@@ -5,13 +5,13 @@ p
   = @admin_panel_article.title
 p
   strong Content:
-  = @admin_panel_article.content
+  = raw @admin_panel_article.content
 p
   strong Description:
   = @admin_panel_article.description
 p
   strong Category:
-  = @admin_panel_article.category
+  = @admin_panel_article.category.name
 p
   strong Type article:
   = @admin_panel_article.type_article

@@ -155,22 +155,35 @@ li, ol {
 //Elements
 //Forms
 .form_group {
-  //padding: 20px;
-  background: rgb(242, 242, 242);
-  border: 1px solid rgb(230, 233, 237);
-  border-bottom-width: 2px;
-  border-radius: 3px;
+  label {
+    font-size: 16px;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    font-family: Roboto, Sans-Serif;
+    line-height: 1.42857143;
+  }
+
+  //input title
+  input {
+    background-color: #fff;
+    box-shadow: none;
+    border: 1px solid #e3e3e3;
+    border-radius: 4px;
+    color: #565656;
+    padding: 8px 12px;
+    transition: all .3s linear;
+    font-size: 20px;
+    font-family: Roboto, Sans-Serif;
+
+    &:focus {
+      border: 1px solid #aaa;
+      outline: 0 !important;
+      color: #333;
+    }
+  }
 }
 
-.form_input {
-  font-size: inherit;
-  font-family: inherit;
-  padding: 5px 4px;
-  letter-spacing: normal;
-  color: rgb(102, 102, 102);
-  border: 1px solid rgb(204, 204, 204);
-  border-radius: 3px;
-}
+
 
 //Button from link
 .button_link {
