@@ -11,9 +11,9 @@ ul.nav
   li
     = link_to "Mean_page", admin_panel_path
   li
-  /   = link_to "Articles", admin_panel_articles_path
-  / / li
-  / /   = link_to 'Users', admin_panel_admin_users_path
+    = link_to fa_icon('newspaper', type: :regular, text: "Articles"), admin_panel_articles_path
+  li
+    = link_to 'Category', admin_panel_categories_path
   / li
   /   = link_to 'Categories', admin_panel_categories_path
   / li
