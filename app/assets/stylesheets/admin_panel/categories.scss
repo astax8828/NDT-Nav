@@ -12,7 +12,27 @@
   &-table {
 
   }
-  &-form_new{
+
+  &-form_new {
     padding-right: 15px;
+
+
+    & > form {
+      & > :nth-child(3) {
+        width: 350px;
+      }
+
+      & > :nth-child(odd) {
+
+
+        margin-bottom: 25px;
+      }
+    }
+
+    & .button_ap {
+      justify-self: center;
+      width: min-content !important;
+    }
   }
 }
+

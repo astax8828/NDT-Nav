@@ -208,7 +208,7 @@ li, ol {
     color: #565656;
     padding: 8px 12px;
     transition: all .3s linear;
-    font-size: 20px;
+    font-size: 14px;
     font-family: Roboto, Sans-Serif;
 
     &:focus {
@@ -225,13 +225,13 @@ li, ol {
   color: rgb(255, 255, 255) !important;
   background-color: rgb(68, 68, 68) !important;
   opacity: 1;
-  min-width: 140px;
+  //min-width: 140px;
   transition: all 60ms ease-in;
   border-width: 1px;
   font-weight: 400;
   padding: 2px 16px !important;
   display: inline-block;
-  font-size: 12px;
+  font-size: 14px;
   line-height: 1.42857143;
   text-align: center;
   white-space: nowrap;
@@ -268,6 +268,12 @@ li, ol {
 
   thead > tr > th {
     padding-left: 8px;
+    border-bottom-width: 1px;
+    font-size: 14px;
+    text-transform: uppercase;
+    color: #565656;
+    font-weight: 400;
+    padding-bottom: 5px;
   }
 
   & > tbody {
@@ -279,6 +285,9 @@ li, ol {
       & > td {
         padding: 12px 8px;
         border-top: 1px solid rgb(221, 221, 221);
+        line-height: 1.42857143;
+        font-weight: 400;
+        font-size: 14px;
       }
 
       &:nth-of-type(odd) {
