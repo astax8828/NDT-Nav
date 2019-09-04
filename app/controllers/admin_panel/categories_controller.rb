@@ -5,10 +5,12 @@ class AdminPanel::CategoriesController < ApplicationController
   # GET /admin_panel/categories
   def index
     @admin_panel_categories = AdminPanel::Category.all
+    @admin_panel_category = AdminPanel::Category.new
   end
 
   # GET /admin_panel/categories/1
   def show
+
   end
 
   # GET /admin_panel/categories/new
@@ -25,7 +27,7 @@ class AdminPanel::CategoriesController < ApplicationController
     @admin_panel_category = AdminPanel::Category.new(admin_panel_category_params)
 
     if @admin_panel_category.save
-      redirect_to @admin_panel_category, notice: 'Category was successfully created.'
+      redirect_to admin_panel_categories_path, notice: 'Category was successfully created.'
     else
       render :new
     end

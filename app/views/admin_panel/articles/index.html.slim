@@ -20,7 +20,7 @@
         tr
           td = admin_panel_article.title
           td = admin_panel_article.description
-          td = admin_panel_article.category.name
+          td = link_to admin_panel_article.category.name, admin_panel_article.category
           td = admin_panel_article.type_article
           td = admin_panel_article.allow_comments
           td = admin_panel_article.status_article

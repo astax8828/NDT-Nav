@@ -1,4 +1,5 @@
-= form_for @admin_panel_category do |f|
+= notice
+= simple_form_for @admin_panel_category, :html => {:class => "grid form_group"} do |f|
   - if @admin_panel_category.errors.any?
     #error_explanation
       h2 = "#{pluralize(@admin_panel_category.errors.count, "error")} prohibited this admin_panel_category from being saved:"
@@ -6,10 +7,12 @@
         - @admin_panel_category.errors.full_messages.each do |message|
           li = message
 
-  .field
-    = f.label :name
-    = f.text_field :name
-  .field
-    = f.label :description
-    = f.text_area :description
-  .actions = f.submit
+
+  /Name of category
+  = f.label :name.capitalize
+  = f.input_field :name, autocomplete: "off", as: :string
+
+  /Description of category
+  = f.label :description.capitalize
+  = f.input_field :description, autocomplete: "off", rows: '10'
+  = f.button :submit, class: 'button_ap'

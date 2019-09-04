@@ -1,3 +1,18 @@
 // Place all the styles related to the admin_panel/categories controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+// Page of index categories
+.categories_index {
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+  grid-column-gap: 15px;
+
+  //Table of categories
+  &-table {
+
+  }
+  &-form_new{
+    padding-right: 15px;
+  }
+}
