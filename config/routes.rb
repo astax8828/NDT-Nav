@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+
+
+  get 'articles', to: 'articles#index'
+  resources :articles, only: :show
   namespace :admin_panel do
     get '/', to: 'admin_panel#index'
     resources :articles

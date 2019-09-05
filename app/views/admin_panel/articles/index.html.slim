@@ -27,7 +27,7 @@
           td = admin_panel_article.type_article
           td = admin_panel_article.allow_comments
           td = admin_panel_article.status_article
-          td = link_to 'Show', admin_panel_article
+          td = link_to 'Show', article_path(id: admin_panel_article.id)
           td = link_to 'Edit', edit_admin_panel_article_path(admin_panel_article)
           td = link_to 'Destroy', admin_panel_article, data: {confirm: 'Are you sure?'}, method: :delete
     
