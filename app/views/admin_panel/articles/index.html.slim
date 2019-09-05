@@ -23,8 +23,7 @@
           td
             /If article have a category
               /TODO Добавить в хелпер этот алгоритм
-            - if admin_panel_article.category.nil? == false
-              = link_to admin_panel_article.category.name, admin_panel_article.category
+            = category_link admin_panel_article
           td = admin_panel_article.type_article
           td = admin_panel_article.allow_comments
           td = admin_panel_article.status_article
