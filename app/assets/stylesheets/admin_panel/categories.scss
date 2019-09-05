@@ -36,3 +36,25 @@
   }
 }
 
+// Page of edit categories.
+.categories_edit {
+  margin-left: 15px;
+  & > form {
+    grid-template-columns: min-content;
+    & > :nth-child(even) {
+      width: 350px;
+    }
+
+    & > :nth-child(even) {
+
+
+      margin-bottom: 25px;
+    }
+  }
+
+  & .button_ap {
+    justify-self: center;
+    width: min-content !important;
+  }
+}
+
