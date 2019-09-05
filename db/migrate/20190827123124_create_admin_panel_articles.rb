@@ -5,7 +5,7 @@ class CreateAdminPanelArticles < ActiveRecord::Migration[6.0]
       t.text :title
       t.text :content
       t.text :description
-      t.references :category, null: false, foreign_key: true
+      t.references :category, foreign_key: true
       t.string :type_article
       t.boolean :allow_comments
       t.string :status_article
