@@ -1,4 +1,5 @@
 class AdminPanel::TagsController < ApplicationController
+  layout 'admin_panel/admin_panel'
   before_action :set_admin_panel_tag, only: [:show, :edit, :update, :destroy]
 
   # GET /admin_panel/tags
