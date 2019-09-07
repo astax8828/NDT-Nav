@@ -7,6 +7,7 @@ table.table_admin_panel
       th Title
       th Description
       th Category
+      th Tags
       th Type article
       th Allow comments
       th Status article
@@ -19,10 +20,9 @@ table.table_admin_panel
       tr
         td = admin_panel_article.title
         td = admin_panel_article.description
-        td
-          /If article have a category
-              /TODO Добавить в хелпер этот алгоритм
-          = category_link admin_panel_article
+        td = category_link admin_panel_article
+        td = raw admin_panel_article.tags.map(&:name).map { |t| link_to t,
+                admin_panel_tag_path(t) }.join(', ')
         td = admin_panel_article.type_article
         td = admin_panel_article.allow_comments
         td = admin_panel_article.status_article
