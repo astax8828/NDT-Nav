@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
 
+  resources :tags
   get 'articles', to: 'articles#index'
   resources :articles, only: :show
   namespace :admin_panel do
