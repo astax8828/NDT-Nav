@@ -58,6 +58,6 @@ class AdminPanel::ArticlesController < ApplicationController
   # Only allow a trusted parameter "white list" through.
   def admin_panel_article_params
     params.require(:admin_panel_article).permit(:title, :content, :description, :category_id,
-                                                :type_article, :allow_comments, :status_article)
+                                                :type_article, :allow_comments, :status_article, :all_tags)
   end
 end

@@ -1,15 +1,11 @@
 Rails.application.routes.draw do
-
-
-  namespace :admin_panel do
-    resources :tags
-  end
   get 'articles', to: 'articles#index'
   resources :articles, only: :show
   namespace :admin_panel do
     get '/', to: 'admin_panel#index'
     resources :articles
     resources :categories
+    resources :tags
   end
 
   # devise_for :admins, class_name: "AdminPanel::Admin"
