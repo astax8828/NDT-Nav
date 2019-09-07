@@ -1,23 +1,24 @@
 h1 Listing admin_panel_tags
-
-table
-  thead
-    tr
-      th Name
-      th Description
-      th
-      th
-      th
-
-  tbody
-    - @admin_panel_tags.each do |admin_panel_tag|
-      tr
-        td = admin_panel_tag.name
-        td = admin_panel_tag.description
-        td = link_to 'Show', admin_panel_tag
-        td = link_to 'Edit', edit_admin_panel_tag_path(admin_panel_tag)
-        td = link_to 'Destroy', admin_panel_tag, data: { confirm: 'Are you sure?' }, method: :delete
-
-br
-
 = link_to 'New Tag', new_admin_panel_tag_path
+
+.grid.tags_index
+  table.table_admin_panel.tags_index-table
+    thead
+      tr
+        th Name
+        th Description
+        th
+        th
+        th
+
+    tbody
+      - @admin_panel_tags.each do |admin_panel_tag|
+        tr
+          td = admin_panel_tag.name
+          td = admin_panel_tag.description
+          td = link_to 'Show', admin_panel_tag
+          td = link_to 'Edit', edit_admin_panel_tag_path(admin_panel_tag)
+          td = link_to 'Destroy', admin_panel_tag, data: { confirm: 'Are you sure?' }, method: :delete
+
+  .tags_index-form_new
+    == render 'form'

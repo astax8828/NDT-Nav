@@ -5,6 +5,7 @@ class AdminPanel::TagsController < ApplicationController
   # GET /admin_panel/tags
   def index
     @admin_panel_tags = AdminPanel::Tag.all
+    @admin_panel_tag = AdminPanel::Tag.new
   end
 
   # GET /admin_panel/tags/1
