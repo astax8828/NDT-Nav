@@ -8,7 +8,7 @@ class AdminPanel::Article < ApplicationRecord
   belongs_to :admin_account
 
   # Associations for tags.
-  has_many :taggings
+  has_many :taggings, dependent: :destroy
   has_many :tags, through: :taggings
 
   def all_tags

@@ -43,7 +43,7 @@ class AdminPanel::TagsController < ApplicationController
 
   # DELETE /admin_panel/tags/1
   def destroy
-    @admin_panel_tag.destroy
+    @admin_panel_tag_id.destroy
     redirect_to admin_panel_tags_url, notice: 'Tag was successfully destroyed.'
   end
 
@@ -51,6 +51,7 @@ class AdminPanel::TagsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_admin_panel_tag
       @admin_panel_tag = AdminPanel::Tag.find_by(name: params[:id])
+      @admin_panel_tag_id = AdminPanel::Tag.find(params[:id])
     end
 
     # Only allow a trusted parameter "white list" through.
