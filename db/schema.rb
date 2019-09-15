@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_24_152330) do
+ActiveRecord::Schema.define(version: 2019_09_07_114552) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,5 +34,48 @@ ActiveRecord::Schema.define(version: 2019_08_24_152330) do
     t.index ["reset_password_token"], name: "index_admin_panel_admins_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "admin_accounts", "admin_panel_admins"
+  create_table "articles", force: :cascade do |t|
+    t.bigint "admin_account_id", null: false
+    t.text "title"
+    t.text "content"
+    t.text "description"
+    t.bigint "category_id"
+    t.string "type_article"
+    t.boolean "allow_comments"
+    t.string "status_article"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["admin_account_id"], name: "index_articles_on_admin_account_id"
+    t.index ["category_id"], name: "index_articles_on_category_id"
+  end
+
+  create_table "categories", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "category_id"
+    t.index ["category_id"], name: "index_categories_on_category_id"
+  end
+
+  create_table "taggings", force: :cascade do |t|
+    t.bigint "article_id", null: false
+    t.bigint "tag_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["article_id"], name: "index_taggings_on_article_id"
+    t.index ["tag_id"], name: "index_taggings_on_tag_id"
+  end
+
+  create_table "tags", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  add_foreign_key "articles", "admin_accounts"
+  add_foreign_key "articles", "categories"
+  add_foreign_key "taggings", "articles"
+  add_foreign_key "taggings", "tags"
 end

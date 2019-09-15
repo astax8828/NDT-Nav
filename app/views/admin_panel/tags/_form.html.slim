@@ -1,0 +1,13 @@
+= simple_form_for @admin_panel_tag, :html => {:class => "grid form_group"} do |f|
+  = f.error_notification
+  = f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present?
+
+  /Given Name of tag
+  = f.label 'name Tag'.capitalize
+  = f.input_field :name, autocomplete: "off", as: :string
+
+  /Description of tag
+  = f.label :description.capitalize
+  = f.input_field :description, autocomplete: "off", rows: '5'
+
+  = f.button :submit, class: 'button_ap'

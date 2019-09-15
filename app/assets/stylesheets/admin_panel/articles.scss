@@ -1,0 +1,42 @@
+// Place all the styles related to the admin_panel/Articles controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+//The Index page
+
+
+//The Page of a New Article
+.article_form {
+  grid-template-columns: 9fr 1fr;
+
+  grid-column-gap: 15px;
+
+
+  &-visual_editor {
+    padding-top: 15px;
+    padding-left: 10px;
+
+    //Title input
+    & > :nth-child(2) {
+      margin-bottom: 25px;
+    }
+
+
+    //Textarea description
+    & > :nth-child(7) {
+      margin-top: 25px;
+      font-size: 14px;
+      font-family: Roboto-Black, Sans-Serif;
+
+    }
+  }
+
+  &-sidebar {
+    grid-auto-rows: minmax(min-content, max-content);
+    padding-top: 15px;
+
+    & > :nth-child(even) {
+      margin-bottom: 25px;
+    }
+  }
+}

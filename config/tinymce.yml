@@ -1,0 +1,8 @@
+toolbar:
+  - styleselect | bold italic | undo redo
+  - image | link | fullscreen | restoredraft
+plugins:
+  - image
+  - link
+  - fullscreen
+  - autosave

@@ -1,0 +1,38 @@
+
+
+p
+  strong Name:
+  = @admin_panel_category.name
+p
+  strong Description:
+  = @admin_panel_category.description
+
+=> link_to 'Edit', edit_admin_panel_category_path(@admin_panel_category)
+'|
+=< link_to 'Back', admin_panel_categories_path
+
+table.table_admin_panel
+  thead
+    tr
+      th Title
+      th Description
+      th Category
+      th Type article
+      th Allow comments
+      th Status article
+      th
+      th
+      th
+
+    tbody
+    - @admin_panel_category.articles.each do |admin_panel_article|
+      tr
+        td = admin_panel_article.title
+        td = admin_panel_article.description
+        td = admin_panel_article.category.name
+        td = admin_panel_article.type_article
+        td = admin_panel_article.allow_comments
+        td = admin_panel_article.status_article
+        td = link_to 'Show', admin_panel_article
+        td = link_to 'Edit', edit_admin_panel_article_path(admin_panel_article)
+        td = link_to 'Destroy', admin_panel_article, data: {confirm: 'Are you sure?'}, method: :delete

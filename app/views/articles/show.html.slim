@@ -1,0 +1,23 @@
+h1 Articles#show
+p Find me in app/views/articles/show.html.slim
+p
+  strong Title:
+  = @article.title
+p
+  strong Content:
+  = raw @article.content
+p
+  strong Description:
+  = @article.description
+p
+  strong Category:
+  = category_link @article
+p
+  strong Type article:
+  = @article.type_article
+p
+  strong Allow comments:
+  = @article.allow_comments
+p
+  strong Status article:
+  = @article.status_article

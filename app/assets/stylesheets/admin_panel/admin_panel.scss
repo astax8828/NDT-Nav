@@ -3,7 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 body {
   background-color: rgb(245, 245, 245);
-
+  font-family: Roboto-Black, Sans-Serif;
 
   .root {
     grid: 100vh / 260px auto;
@@ -57,6 +57,9 @@ body {
       padding-bottom: 0;
       //height: calc(100vh - 59px *2);
       height: 93%;
+      overflow: auto;
+      background-color: white;
+
 
 
 
