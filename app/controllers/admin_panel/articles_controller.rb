@@ -15,7 +15,6 @@ class AdminPanel::ArticlesController < ApplicationController
   def new
     @admin_panel_article = AdminPanel::Article.new
     @categories = AdminPanel::Category.all
-
   end
 
   # GET /admin_panel/articles/1/edit

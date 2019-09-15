@@ -1,5 +1,13 @@
 class AdminPanel::Article < ApplicationRecord
+  # Name table.
   self.table_name = 'articles'
+
+  # Validations.
+
+  validates :title, :content, :description, :type_article, :status_article,
+            :category_id, :all_tags, presence: true
+  validates :title, length: { maximum: 255 }
+
 
   # Associations for categories.
   belongs_to :category
