@@ -1,6 +1,7 @@
 class AdminPanel::TagsController < ApplicationController
   layout 'admin_panel/admin_panel'
   before_action :set_admin_panel_tag, only: [:show, :edit, :update, :destroy]
+  before_action :set_admin_panel_tag_id, only: [:destroy]
 
   # GET /admin_panel/tags
   def index
@@ -48,14 +49,18 @@ class AdminPanel::TagsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_admin_panel_tag
-      @admin_panel_tag = AdminPanel::Tag.find_by(name: params[:id])
-      @admin_panel_tag_id = AdminPanel::Tag.find(params[:id])
-    end
 
-    # Only allow a trusted parameter "white list" through.
-    def admin_panel_tag_params
-      params.require(:admin_panel_tag).permit(:name, :description)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_admin_panel_tag
+    @admin_panel_tag = AdminPanel::Tag.find_by(name: params[:id])
+  end
+
+  def set_admin_panel_tag_id
+    @admin_panel_tag_id = AdminPanel::Tag.find(params[:id])
+  end
+
+  # Only allow a trusted parameter "white list" through.
+  def admin_panel_tag_params
+    params.require(:admin_panel_tag).permit(:name, :description)
+  end
 end
