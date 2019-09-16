@@ -33,8 +33,9 @@
     }
 
     .content {
-      min-width: 35%;
-
+      background-color: white;
+      padding-right: 35px;
+      padding-left: 35px;
       //.log_out {
       //  margin-top: 15px;
       //}
@@ -42,8 +43,10 @@
       & > h2 {
         text-align: center;
       }
+
       & > form {
         margin: 20px;
+
         & > .field > .form_input {
           width: 90%;
         }
