@@ -1,5 +1,6 @@
 class AdminPanel::ArticlesController < ApplicationController
   layout "admin_panel/admin_panel"
+  before_action :authenticate_admin!
   before_action :set_admin_panel_article, only: [:show, :edit, :update, :destroy]
 
   # GET /admin_panel/articles

@@ -17,7 +17,7 @@ h1 Listing admin_panel_tags
           td = admin_panel_tag.name
           td = admin_panel_tag.description
           td = link_to 'Show', admin_panel_tag_path(admin_panel_tag.name)
-          td = link_to 'Edit', edit_admin_panel_tag_path(admin_panel_tag)
+          td = link_to 'Edit', edit_admin_panel_tag_path(admin_panel_tag.name)
           td = link_to 'Destroy', admin_panel_tag, data: { confirm: 'Are you sure?' }, method: :delete
 
   .tags_index-form_new
