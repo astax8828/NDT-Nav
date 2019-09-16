@@ -1,5 +1,6 @@
 class AdminPanel::TagsController < ApplicationController
   layout 'admin_panel/admin_panel'
+  before_action :authenticate_admin!
   before_action :set_admin_panel_tag, only: [:show, :edit, :update, :destroy]
   before_action :set_admin_panel_tag_id, only: [:destroy]
 
